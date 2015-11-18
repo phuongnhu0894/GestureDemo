@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gab-QA-h5w">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Swipe-->
@@ -97,10 +98,38 @@
                     <view key="view" contentMode="scaleToFill" id="SFQ-Na-Ht6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d9Z-dv-807">
+                                <rect key="frame" x="187" y="187" width="151" height="128"/>
+                                <color key="backgroundColor" red="0.1578132458" green="0.96189850450000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6c-25-P2u">
+                                <rect key="frame" x="481" y="92" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-HX-rUq">
+                                <rect key="frame" x="481" y="134" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="w2B-HX-rUq" firstAttribute="trailing" secondItem="k6c-25-P2u" secondAttribute="trailing" id="KzJ-Rs-Fsl"/>
+                            <constraint firstItem="k6c-25-P2u" firstAttribute="top" secondItem="3dd-K8-1HQ" secondAttribute="bottom" constant="72" id="fFB-ew-9rZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="k6c-25-P2u" secondAttribute="trailing" constant="57" id="seS-qT-qeJ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pan" id="SdU-Ms-hZr" userLabel="Item 3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="horizontalVelocityLabel" destination="k6c-25-P2u" id="mF7-SA-ptn"/>
+                        <outlet property="testView" destination="d9Z-dv-807" id="9Jx-Zr-j7X"/>
+                        <outlet property="verticalVelocityLabel" destination="w2B-HX-rUq" id="VdE-bW-4hJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQE-LJ-61B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -139,14 +168,27 @@
                     <view key="view" contentMode="scaleToFill" id="znk-xK-Gga">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bij-46-whz">
+                                <rect key="frame" x="202" y="236" width="197" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.4813451527" blue="0.33954480949999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Bij-46-whz" firstAttribute="centerY" secondItem="znk-xK-Gga" secondAttribute="centerY" id="DdB-Bi-vf9"/>
+                            <constraint firstItem="Bij-46-whz" firstAttribute="centerX" secondItem="znk-xK-Gga" secondAttribute="centerX" id="rlD-na-04O"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pinch" id="izr-gB-FDf" userLabel="Item 5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="testView" destination="Bij-46-whz" id="6AK-Gl-ln0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aer-fM-yHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23" y="793"/>
+            <point key="canvasLocation" x="59" y="487"/>
         </scene>
         <!--Rotation View Controller-->
         <scene sceneID="uG7-M7-wUE">
@@ -159,14 +201,27 @@
                     <view key="view" contentMode="scaleToFill" id="4C6-Aa-9vB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4j-Kj-QGw">
+                                <rect key="frame" x="225" y="236" width="151" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.65102505119999998" blue="0.94786018520000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I4j-Kj-QGw" firstAttribute="centerX" secondItem="4C6-Aa-9vB" secondAttribute="centerX" id="HJj-ar-dAe"/>
+                            <constraint firstItem="I4j-Kj-QGw" firstAttribute="centerY" secondItem="4C6-Aa-9vB" secondAttribute="centerY" id="ct5-F0-egL"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Rotation" id="Hlk-LS-sk9" userLabel="Item 4"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="testView" destination="I4j-Kj-QGw" id="aGO-6q-drx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sN-n8-AVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-619" y="773"/>
+            <point key="canvasLocation" x="-558" y="697"/>
         </scene>
     </scenes>
 </document>

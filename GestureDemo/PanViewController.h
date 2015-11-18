@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PanViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIView *testView;
+@property (weak, nonatomic) IBOutlet UILabel *horizontalVelocityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *verticalVelocityLabel;
 @end

@@ -27,17 +27,18 @@
 
 - (void) handleSingleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGFloat newWidth = 200;
-    if (self.testview.frame.size.width== 100) {
-        newWidth = 200;
-    }
+//   if (self.testview.frame.size.width== 100) {
+//      newWidth = 200;
+//    }
     CGPoint currentCenter = self.testview.center;
+    //set frame
     self.testview.frame = CGRectMake(self.testview.frame.origin.x,self.testview.frame.origin.y, newWidth,self.testview.frame.size.height);
     self.testview.center = currentCenter;
 }
 
 - (void)handleDoubleTapGesture:(UITapGestureRecognizer *)tapGestureRecognizer {
     CGSize newSize = CGSizeMake(100.0, 100.0);
-    if(self.testview.frame.size.width == 100) {
+   if(self.testview.frame.size.width == 100) {
         newSize.width = 200;
         newSize.height = 200;
     }
